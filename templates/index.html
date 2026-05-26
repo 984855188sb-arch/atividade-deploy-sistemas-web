@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas Web</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>📋 Painel de Controle de Tarefas</h1>
+        <p>Sistemas Web — Integração HTML5, CSS3 e Python (Flask)</p>
+    </header>
+
+    <main class="container">
+        <section class="form-section">
+            <h2>Nova Tarefa</h2>
+            <form action="/adicionar" method="POST">
+                <input type="text" name="titulo" placeholder="Digite a descrição da tarefa..." required>
+                <button type="submit">Adicionar</button>
+            </form>
+        </section>
+
+        <section class="list-section">
+            <h2>Suas Tarefas Cadastradas</h2>
+            <ul>
+                {% for tarefa in tarefas %}
+                <li class="{% if tarefa.status == 'Concluído' %}concluida{% endif %}">
+                    <span>{{ tarefa.titulo }}</span>
+                    <div class="actions">
+                        <span class="badge {{ tarefa.status.lower() }}">{{ tarefa.status }}</span>
+                        <a href="/alternar/{{ tarefa.id }}" class="btn-action">Alternar</a>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Aplicação Web para Avaliação Acadêmica — Nota 3</p>
+    </footer>
+</body>
+</html>
