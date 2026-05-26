@@ -1,0 +1,95 @@
+:root {
+    --primary-color: #4a90e2;
+    --success-color: #2ec4b6;
+    --warning-color: #ff9f1c;
+    --dark-color: #2b2d42;
+    --light-color: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: var(--dark-color);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 { margin: 0; font-size: 2rem; }
+header p { margin: 0.5rem 0 0 0; color: #a0aab2; }
+
+.container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
+}
+
+h2 { margin-top: 0; color: var(--dark-color); border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
+
+form { display: flex; gap: 10px; }
+input[type="text"] {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+button:hover { background-color: #357abd; }
+
+ul { list-style: none; padding: 0; margin: 0; }
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+li.concluida span { text-decoration: line-through; color: #888; }
+
+.actions { display: flex; align-items: center; gap: 10px; }
+.badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.badge.concluído { background-color: #d4edda; color: #155724; }
+.badge.pendente { background-color: #fff3cd; color: #856404; }
+
+.btn-action {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    border: 1px solid var(--primary-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+.btn-action:hover { background: var(--primary-color); color: white; }
+
+footer { text-align: center; padding: 2rem; color: #888; font-size: 0.9rem; }
